@@ -4,17 +4,34 @@
  */
 package Question2;
 
-/**
- *
- * @author jenni
- */
-public class Runapplication {
+import java.util.Scanner;
 
-    /**
-     * @param args the command line arguments
-     */
+public class RunApplication {
+
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Scanner input = new Scanner(System.in);
+
+        // Get information from user
+        System.out.print("Enter the job type: ");
+        String JobType = input.nextLine();
+
+        System.out.print("Enter the pumbler name: ");
+        String PlumberName = input.nextLine();
+
+        System.out.print("Enter the number of jobs completed: ");
+        int JobsCompleted = input.nextInt();
+
+        // Create object
+        PlumbingJobReport report =
+                new PlumbingJobReport(
+                        JobType,
+                        PlumberName,
+                        JobsCompleted);
+
+        // Display report
+        report.printPlumbingJobReport();
+
+        input.close();
     }
-    
 }
